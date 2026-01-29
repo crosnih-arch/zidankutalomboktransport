@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zidan Kuta Lombok Transport and Rental - Your Trusted Travel Partner</title>
+    <meta name="description" content="Trusted scooter rental, tour and transport service in Lombok. Affordable rates, professional service, and safe vehicles for your Lombok adventure.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0891b2;
+            --secondary: #06b6d4;
+            --accent: #fbbf24;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+            --gradient-overlay: linear-gradient(135deg, rgba(8, 145, 178, 0.9) 0%, rgba(6, 182, 212, 0.85) 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(8, 145, 178, 0.9) 0%, rgba(6, 182, 212, 0.85) 100%),
+                        url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, var(--white), transparent);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        /* Rental Scooter Section - Mobile First */
+        .rental-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .rental-item {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .rental-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .rental-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background: #f1f5f9;
+        }
+
+        .rental-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .rental-img:hover {
+            transform: scale(1.05);
+        }
+
+        .rental-info {
+            padding: 1.5rem;
+        }
+
+        .rental-info h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .specs {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .spec-item i {
+            color: var(--primary);
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .price span {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-weight: 400;
+        }
+
+        .rental-desc {
+            color: #64748b;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Tour Section */
+        .tour-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tour-item {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .tour-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .tour-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background: #f1f5f9;
+        }
+
+        .tour-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tour-img:hover {
+            transform: scale(1.05);
+        }
+
+        .tour-info {
+            padding: 1.5rem;
+        }
+
+        .tour-info h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .tour-route {
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .tour-route h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .route-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .route-list li {
+            padding: 0.3rem 0;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .route-list li::before {
+            content: '→';
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Location Section */
+        .location-content {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container {
+            height: 400px;
+            background: #e2e8f0;
+            position: relative;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .location-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .location-info h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .location-info p {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover {
+            background: var(--gradient);
+            color: var(--white);
+            transform: translateY(-5px);
+        }
+
+        .value-item i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover i {
+            color: var(--white);
+        }
+
+        .value-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #f8fafc;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: var(--gradient);
+            color: var(--white);
+            transform: translateX(10px);
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover i {
+            color: var(--white);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 30px;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.7);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Image Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            animation: zoomIn 0.3s ease;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            transform: rotate(90deg);
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive - Tablet */
+        @media (min-width: 768px) {
+            .rental-grid,
+            .tour-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .rental-item:nth-child(odd) .rental-images,
+            .tour-item:nth-child(odd) .tour-images {
+                order: 1;
+            }
+
+            .rental-item:nth-child(odd) .rental-info,
+            .tour-item:nth-child(odd) .tour-info {
+                order: 2;
+            }
+        }
+
+        /* Responsive - Desktop */
+        @media (min-width: 1024px) {
+            .rental-grid,
+            .tour-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .rental-images,
+            .tour-images {
+                grid-template-columns: 1fr;
+            }
+
+            .rental-img,
+            .tour-img {
+                height: 250px;
+            }
+        }
+
+        /* Mobile Menu */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 100%;
+                max-width: 300px;
+                height: calc(100vh - 80px);
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 2rem;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            color: var(--primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .lang-btn.active {
+            background: var(--gradient);
+            color: var(--white);
+        }
+
+        .lang-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--white);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-motorcycle"></i> Zidan Lombok
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#rental" class="nav-link">Rental Scooter</a></li>
+                <li><a href="#tour" class="nav-link">Tour & Transport</a></li>
+                <li><a href="#location" class="nav-link">Lokasi</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="lang-toggle">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="id">ID</button>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Zidan Kuta Lombok Transport and Rental</h1>
+            <p>Your Trusted Scooter Rental, Tour & Transport Service in Lombok</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/6281234567890?text=Hi%20Zidan%20Lombok!%20I%20want%20to%20book" class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i> Booking via WhatsApp
+                </a>
+                <a href="#rental" class="btn btn-outline">
+                    <i class="fas fa-compass"></i> Explore Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rental Scooter Section -->
+    <section id="rental">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Scooter Rental</h2>
+                <p>Choose your perfect ride for exploring Lombok</p>
+            </div>
+            <div class="rental-grid">
+                <!-- Rental Item 1 -->
+                <div class="rental-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="rental-images">
+                        <img src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?w=600" alt="Honda Vario 125" class="rental-img" onclick="openModal(this.src)">
+                        <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=600" alt="Honda Vario Detail" class="rental-img" onclick="openModal(this.src)">
+                    </div>
+                    <div class="rental-info">
+                        <h3>Honda Vario 125</h3>
+                        <div class="specs">
+                            <div class="spec-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>125cc</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Fuel Efficient</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-user"></i>
+                                <span>2 Person</span>
+                            </div>
+                        </div>
+                        <div class="price">
+                            Rp 75.000 <span>/ day</span>
+                        </div>
+                        <p class="rental-desc">
+                            Perfect for daily exploration around Lombok. Comfortable, fuel-efficient, and easy to ride. Includes helmet and basic insurance.
+                        </p>
+                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20rent%20Honda%20Vario%20125" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fab fa-whatsapp"></i> Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Rental Item 2 -->
+                <div class="rental-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="rental-images">
+                        <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=600" alt="Yamaha NMAX" class="rental-img" onclick="openModal(this.src)">
+                        <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=600" alt="Yamaha NMAX Detail" class="rental-img" onclick="openModal(this.src)">
+                    </div>
+                    <div class="rental-info">
+                        <h3>Yamaha NMAX</h3>
+                        <div class="specs">
+                            <div class="spec-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>155cc</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-bolt"></i>
+                                <span>Powerful</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-user"></i>
+                                <span>2 Person</span>
+                            </div>
+                        </div>
+                        <div class="price">
+                            Rp 100.000 <span>/ day</span>
+                        </div>
+                        <p class="rental-desc">
+                            Premium scooter with more power and comfort. Ideal for long-distance travel and touring around the island. Spacious storage included.
+                        </p>
+                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20rent%20Yamaha%20NMAX" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fab fa-whatsapp"></i> Book Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Rental Item 3 -->
+                <div class="rental-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="rental-images">
+                        <img src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=600" alt="Honda Scoopy" class="rental-img" onclick="openModal(this.src)">
+                        <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=600" alt="Honda Scoopy Detail" class="rental-img" onclick="openModal(this.src)">
+                    </div>
+                    <div class="rental-info">
+                        <h3>Honda Scoopy</h3>
+                        <div class="specs">
+                            <div class="spec-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>110cc</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-feather"></i>
+                                <span>Lightweight</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-user"></i>
+                                <span>2 Person</span>
+                            </div>
+                        </div>
+                        <div class="price">
+                            Rp 65.000 <span>/ day</span>
+                        </div>
+                        <p class="rental-desc">
+                            Cute and stylish scooter, perfect for beginners and city riding. Easy to maneuver with retro design. Great for photo opportunities!
+                        </p>
+                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20rent%20Honda%20Scoopy" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fab fa-whatsapp"></i> Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour and Transport Section -->
+    <section id="tour" style="background: #f8fafc;">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Tour & Transport Services</h2>
+                <p>Explore the beauty of Lombok with our professional guides</p>
+            </div>
+            <div class="tour-grid">
+                <!-- Tour Item 1 -->
+                <div class="tour-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tour-images">
+                        <img src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?w=600" alt="South Lombok Tour" class="tour-img" onclick="openModal(this.src)">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Kuta Beach" class="tour-img" onclick="openModal(this.src)">
+                    </div>
+                    <div class="tour-info">
+                        <h3>South Lombok Beach Tour</h3>
+                        <div class="tour-route">
+                            <h4><i class="fas fa-map-marked-alt"></i> Tour Route</h4>
+                            <ul class="route-list">
+                                <li>Kuta Beach Mandalika</li>
+                                <li>Tanjung Aan Beach</li>
+                                <li>Selong Belanak Beach</li>
+                                <li>Mawun Beach</li>
+                            </ul>
+                        </div>
+                        <p class="rental-desc">
+                            Full day beach hopping tour to the most beautiful beaches in South Lombok. Includes driver, fuel, and local guide. Perfect for beach lovers!
+                        </p>
+                        <div class="price">
+                            Rp 400.000 <span>/ car (8 hours)</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20book%20South%20Lombok%20Beach%20Tour" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fab fa-whatsapp"></i> Book Tour
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tour Item 2 -->
+                <div class="tour-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tour-images">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600" alt="Rinjani Trekking" class="tour-img" onclick="openModal(this.src)">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600" alt="Mountain View" class="tour-img" onclick="openModal(this.src)">
+                    </div>
+                    <div class="tour-info">
+                        <h3>Mount Rinjani Transfer</h3>
+                        <div class="tour-route">
+                            <h4><i class="fas fa-map-marked-alt"></i> Route Options</h4>
+                            <ul class="route-list">
+                                <li>Hotel to Senaru Gate</li>
+                                <li>Hotel to Sembalun Gate</li>
+                                <li>Pick-up from finish point</li>
+                                <li>Round-trip available</li>
+                            </ul>
+                        </div>
+                        <p class="rental-desc">
+                            Safe and comfortable transfer to Mount Rinjani trekking starting points. Experienced driver with knowledge of the best routes.
+                        </p>
+                        <div class="price">
+                            Rp 350.000 <span>/ one way</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20book%20Rinjani%20Transfer" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fab fa-whatsapp"></i> Book Transfer
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tour Item 3 -->
+                <div class="tour-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="tour-images">
+                        <img src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?w=600" alt="Gili Islands" class="tour-img" onclick="openModal(this.src)">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Island Hopping" class="tour-img" onclick="openModal(this.src)">
+                    </div>
+                    <div class="tour-info">
+                        <h3>Gili Islands Transfer</h3>
+                        <div class="tour-route">
+                            <h4><i class="fas fa-map-marked-alt"></i> Available Routes</h4>
+                            <ul class="route-list">
+                                <li>Hotel to Bangsal Port</li>
+                                <li>Hotel to Teluk Nare</li>
+                                <li>Airport to Gili Islands</li>
+                                <li>Round-trip service</li>
+                            </ul>
+                        </div>
+                        <p class="rental-desc">
+                            Hassle-free transfer to Gili Islands departure points. We can also arrange fast boat tickets if needed. Door-to-door service available.
+                        </p>
+                        <div class="price">
+                            Rp 250.000 <span>/ one way</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20book%20Gili%20Islands%20Transfer" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fab fa-whatsapp"></i> Book Transfer
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tour Item 4 -->
+                <div class="tour-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tour-images">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600" alt="Airport Transfer" class="tour-img" onclick="openModal(this.src)">
+                        <img src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=600" alt="Car Service" class="tour-img" onclick="openModal(this.src)">
+                    </div>
+                    <div class="tour-info">
+                        <h3>Airport Transfer</h3>
+                        <div class="tour-route">
+                            <h4><i class="fas fa-map-marked-alt"></i> Service Areas</h4>
+                            <ul class="route-list">
+                                <li>Airport to Kuta/Mandalika</li>
+                                <li>Airport to Senggigi</li>
+                                <li>Airport to Mataram City</li>
+                                <li>Any custom destination</li>
+                            </ul>
+                        </div>
+                        <p class="rental-desc">
+                            Professional airport pick-up and drop-off service. We monitor your flight and adjust for delays. Meet & greet service with name board.
+                        </p>
+                        <div class="price">
+                            From Rp 150.000 <span>/ trip</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20book%20Airport%20Transfer" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fab fa-whatsapp"></i> Book Transfer
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tour Item 5 -->
+                <div class="tour-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tour-images">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600" alt="Waterfall Tour" class="tour-img" onclick="openModal(this.src)">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600" alt="Tiu Kelep" class="tour-img" onclick="openModal(this.src)">
+                    </div>
+                    <div class="tour-info">
+                        <h3>Waterfall Adventure Tour</h3>
+                        <div class="tour-route">
+                            <h4><i class="fas fa-map-marked-alt"></i> Tour Highlights</h4>
+                            <ul class="route-list">
+                                <li>Tiu Kelep Waterfall</li>
+                                <li>Sendang Gile Waterfall</li>
+                                <li>Benang Kelambu Waterfall</li>
+                                <li>Traditional village visit</li>
+                            </ul>
+                        </div>
+                        <p class="rental-desc">
+                            Discover Lombok's stunning waterfalls with our guided tour. Light trekking through rice fields and forests. Swimming opportunity at each waterfall.
+                        </p>
+                        <div class="price">
+                            Rp 450.000 <span>/ car (full day)</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20book%20Waterfall%20Adventure%20Tour" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fab fa-whatsapp"></i> Book Tour
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tour Item 6 -->
+                <div class="tour-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="tour-images">
+                        <img src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?w=600" alt="Custom Tour" class="tour-img" onclick="openModal(this.src)">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Flexible Itinerary" class="tour-img" onclick="openModal(this.src)">
+                    </div>
+                    <div class="tour-info">
+                        <h3>Custom Private Tour</h3>
+                        <div class="tour-route">
+                            <h4><i class="fas fa-map-marked-alt"></i> Your Choice!</h4>
+                            <ul class="route-list">
+                                <li>Design your own itinerary</li>
+                                <li>Mix beaches, culture & nature</li>
+                                <li>Flexible timing & duration</li>
+                                <li>Private car & driver</li>
+                            </ul>
+                        </div>
+                        <p class="rental-desc">
+                            Create your perfect Lombok adventure! Tell us what you want to see and we'll design the perfect tour for you. Maximum flexibility guaranteed.
+                        </p>
+                        <div class="price">
+                            Contact Us <span>/ custom rate</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20create%20a%20custom%20tour" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fab fa-whatsapp"></i> Plan Your Tour
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Location</h2>
+                <p>Find us in the heart of Kuta Lombok</p>
+            </div>
+            <div class="location-content" data-aos="fade-up">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.6589237834814!2d116.27893931478237!3d-8.893849993643938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdbf2f5e3e3b5b%3A0x3030bfbcaf770b0!2sKuta%2C%20Lombok%2C%20Indonesia!5e0!3m2!1sen!2sid!4v1234567890"
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+                <div class="location-info">
+                    <h3><i class="fas fa-map-marker-alt"></i> Visit Our Office</h3>
+                    <p>
+                        Jl. Pantai Kuta, Kuta, Pujut<br>
+                        Lombok Tengah, NTB 83573<br>
+                        Indonesia
+                    </p>
+                    <a href="https://maps.google.com/?q=Kuta+Lombok" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-directions"></i> Open in Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" style="background: #f8fafc;">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>About Us</h2>
+                <p>Your trusted partner for Lombok adventures</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=800" alt="About Zidan Lombok">
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <h3>Welcome to Zidan Kuta Lombok Transport and Rental</h3>
+                    <p>
+                        We are a locally-owned and operated transport and rental service based in the beautiful Kuta area of Lombok. With over 5 years of experience, we pride ourselves on providing safe, reliable, and affordable transportation solutions for tourists and locals alike.
+                    </p>
+                    <p>
+                        Our fleet of well-maintained scooters and vehicles, combined with our knowledge of Lombok's hidden gems, ensures you'll have an unforgettable experience exploring this tropical paradise.
+                    </p>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Trusted</h4>
+                            <p>5+ years serving travelers</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>Safe</h4>
+                            <p>Maintained vehicles & insurance</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-star"></i>
+                            <h4>Professional</h4>
+                            <p>Experienced local guides</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-hand-holding-usd"></i>
+                            <h4>Affordable</h4>
+                            <p>Best rates in Lombok</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Contact Us</h2>
+                <p>Get in touch for bookings and inquiries</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+62 812-3456-7890</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+62 812-3456-7890</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@zidanlombok.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Jl. Pantai Kuta, Kuta, Lombok Tengah</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Every day: 7:00 AM - 9:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form" data-aos="fade-left">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Zidan Kuta Lombok Transport and Rental. All rights reserved.</p>
+            <p>Made with <i class="fas fa-heart" style="color: #ef4444;"></i> in Lombok</p>
+            <div class="social-links">
+                <a href="https://instagram.com/zidanlombok" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com/zidanlombok" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://wa.me/6281234567890" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:info@zidanlombok.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281234567890?text=Hi%20Zidan%20Lombok!%20I%20need%20information" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Image Modal -->
+    <div class="modal" id="imageModal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Image modal
+        function openModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            modal.classList.add('active');
+            modalImg.src = src;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+        }
+
+        // Language toggle
+        const langButtons = document.querySelectorAll('.lang-btn');
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                langButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                // Here you would implement actual language switching
+                console.log('Language switched to: ' + btn.dataset.lang);
+            });
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // WhatsApp message format
+            const whatsappMessage = `Hi Zidan Lombok!%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0A%0AMessage:%0A${encodeURIComponent(message)}`;
+            
+            // Redirect to WhatsApp
+            window.open(`https://wa.me/6281234567890?text=${whatsappMessage}`, '_blank');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Lazy loading images (modern browsers)
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        } else {
+            // Fallback for older browsers
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+</html>
