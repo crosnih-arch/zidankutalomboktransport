@@ -334,7 +334,7 @@
 
         /* Tour Section */
        .beach-tour-poster{
-  background: linear-gradient(180deg,#0ea5e9,#0284c7,#0369a1);
+  background: linear-gradient(180deg,#c1c1c1,#0284c7,#0369a1);
   padding: 30px 16px 50px;
   border-radius: 0;
 }
@@ -384,6 +384,43 @@
   transform: scale(1.08);
   box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 }
+/* =========================
+   TOUR & TRANSPORT TITLE
+   ========================= */
+.tour-transport-title{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  color: #ffffff;
+  position: relative;
+}
+
+/* garis modern bawah */
+.tour-transport-title::after{
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg,#ffffff,#ffffff);
+  margin: 10px auto 0;
+  border-radius: 3px;
+}
+
+/* efek glow halus */
+.tour-transport-title{
+  text-shadow: 0 0 20px rgba(14,165,233,0.15);
+}
+
+/* responsive */
+@media(max-width:600px){
+  .tour-transport-title{
+    font-size: 16px;
+    letter-spacing: 3px;
+  }
+}
 
 /* BOOKING */
 .poster-booking{
@@ -417,6 +454,346 @@
   box-shadow: 0 18px 40px rgba(0,0,0,0.4);
 }
 
+/* city Section */
+.city-tour-white{
+  background: #e2e8f0;
+  padding: 40px 16px 60px;
+}
+
+.city-title{
+  text-align: center;
+  font-size: 32px;
+  font-weight: 900;
+  color: #e11d48;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.city-grid{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 18px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.city-card{
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  transition: 0.35s ease;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #f1f5f9;
+}
+
+.city-card:hover{
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.city-card img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.city-card h3{
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* Booking */
+.city-booking{
+  margin-top: 35px;
+  text-align: center;
+}
+
+.city-booking p{
+  margin-bottom: 14px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.city-btn{
+  background: #22c55e;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+}
+
+.city-btn:hover{
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+/* Tablet & HP */
+@media (max-width: 900px){
+  .city-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* HP kecil */
+@media (max-width: 480px){
+  .city-grid{
+    grid-template-columns: repeat(2, 1fr); /* tetap 2 kolom */
+    gap: 12px;
+  }
+
+  .city-card img{
+    height: 130px;
+  }
+
+  .city-title{
+    font-size: 26px;
+  }
+}
+
+/* ================================
+   WATERFALL POSTER (ISOLATED)
+   ================================ */
+
+.wf-poster{
+  background: linear-gradient(180deg,#0ea5e9,#0284c7,#0369a1);
+  padding: 28px 14px 45px;
+}
+
+/* TITLE */
+.wf-title{
+  text-align: center;
+  font-size: 32px;
+  font-weight: 900;
+  color: #faff00;
+  margin-bottom: 24px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0 #1e3a8a;
+}
+
+/* GRID */
+.wf-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* HP = 2 kolom */
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* CARD */
+.wf-card{
+  background: rgba(255,255,255,0.15);
+  border-radius: 22px;
+  padding: 10px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: 0.35s ease;
+}
+
+.wf-card:hover{
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+}
+
+/* IMAGE */
+.wf-card img{
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 3px solid rgba(255,255,255,0.85);
+}
+
+/* TEXT */
+.wf-card h3{
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #faff00;
+  text-shadow: 1px 1px 0 #1e40af;
+}
+
+/* DESKTOP ONLY */
+@media (min-width: 900px){
+  .wf-grid{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .wf-card img{
+    height: 180px;
+  }
+}
+/* ================================
+   WF MODAL ZOOM (ISOLATED)
+   ================================ */
+
+.wf-modal{
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  animation: wfFade 0.3s ease;
+}
+
+.wf-modal-img{
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 18px;
+  animation: wfZoom 0.35s ease;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.wf-close{
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 42px;
+  color: white;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+@keyframes wfZoom{
+  from{transform: scale(0.6); opacity: 0;}
+  to{transform: scale(1); opacity: 1;}
+}
+
+@keyframes wfFade{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
+/* ================================
+   WF BOOKING (ISOLATED)
+   ================================ */
+
+.wf-booking{
+  margin-top: 35px;
+  text-align: center;
+  color: #fff;
+}
+
+.wf-booking p{
+  margin-bottom: 14px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.wf-btn{
+  background: #22c55e;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+  transition: 0.3s ease;
+}
+
+.wf-btn:hover{
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+}
+
+/* ================================
+   SHUTTLE POSTER (ISOLATED)
+   ================================ */
+
+.shuttle-poster{
+  background: linear-gradient(180deg,#0ea5e9,#0284c7,#0369a1);
+  padding: 18px 12px 35px;
+}
+
+/* HEADER MERAH */
+.shuttle-header{
+  background: #e11d48;
+  color: white;
+  text-align: center;
+  font-weight: 900;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px 6px 0 0;
+  letter-spacing: 1px;
+}
+
+/* TABLE WRAP */
+.shuttle-table-wrap{
+  background: #38bdf8;
+  padding: 10px;
+}
+
+/* TABLE */
+.shuttle-table{
+  width: 100%;
+  border-collapse: collapse;
+  background: #dbeafe;
+  font-size: 13px;
+}
+
+/* HEADER ROW */
+.shuttle-table thead th{
+  background: #facc15;
+  color: #000;
+  font-weight: 900;
+  padding: 8px;
+  border: 1px solid #000;
+  text-align: center;
+}
+
+/* BODY */
+.shuttle-table tbody td{
+  border: 1px solid #000;
+  padding: 6px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.shuttle-table tbody td:nth-child(2){
+  text-align: left;
+  padding-left: 10px;
+}
+
+/* BOOKING */
+.shuttle-booking{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.shuttle-btn{
+  background: #22c55e;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  transition: 0.3s ease;
+}
+
+.shuttle-btn:hover{
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
 
 
         /* Location Section */
@@ -927,7 +1304,7 @@
                         <p class="rental-desc">
                             Perfect for daily exploration around Lombok. Comfortable, fuel-efficient, and easy to ride. Includes helmet and basic insurance.
                         </p>
-                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20rent%20Honda%20Vario%20125" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20rent%20PCX" class="btn btn-primary" style="width: 100%; justify-content: center;">
                             <i class="fab fa-whatsapp"></i> Book Now
                         </a>
                     </div>
@@ -992,7 +1369,7 @@
                         <p class="rental-desc">
                             Premium scooter with more power and comfort. Ideal for long-distance travel and touring around the island. Spacious storage included.
                         </p>
-                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20rent%20Yamaha%20NMAX" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20rent%20Vario125" class="btn btn-primary" style="width: 100%; justify-content: center;">
                             <i class="fab fa-whatsapp"></i> Book Now
                         </a>
                     </div>
@@ -1024,7 +1401,7 @@
                         <p class="rental-desc">
                             Premium scooter with more power and comfort. Ideal for long-distance travel and touring around the island. Spacious storage included.
                         </p>
-                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20rent%20Yamaha%20NMAX" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20rent%20Vario160" class="btn btn-primary" style="width: 100%; justify-content: center;">
                             <i class="fab fa-whatsapp"></i> Book Now
                         </a>
                     </div>
@@ -1056,7 +1433,7 @@
                         <p class="rental-desc">
                             Premium scooter with more power and comfort. Ideal for long-distance travel and touring around the island. Spacious storage included.
                         </p>
-                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20rent%20Yamaha%20NMAX" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20rent%20Scoopy" class="btn btn-primary" style="width: 100%; justify-content: center;">
                             <i class="fab fa-whatsapp"></i> Book Now
                         </a>
                     </div>
@@ -1088,7 +1465,7 @@
                         <p class="rental-desc">
                             Premium scooter with more power and comfort. Ideal for long-distance travel and touring around the island. Spacious storage included.
                         </p>
-                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20rent%20Yamaha%20NMAX" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20rent%20Honda%20Beat" class="btn btn-primary" style="width: 100%; justify-content: center;">
                             <i class="fab fa-whatsapp"></i> Book Now
                         </a>
                     </div>
@@ -1123,7 +1500,7 @@
                         <p class="rental-desc">
                             Cute and stylish scooter, perfect for beginners and city riding. Easy to maneuver with retro design. Great for photo opportunities!
                         </p>
-                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20rent%20Honda%20Scoopy" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20rent%20Yamaha%20lexy" class="btn btn-primary" style="width: 100%; justify-content: center;">
                             <i class="fab fa-whatsapp"></i> Book Now
                         </a>
                     </div>
@@ -1133,9 +1510,13 @@
     </section>
 
     <!-- Tour and Transport Section -->
-    <section id="beach-tour-poster" class="beach-tour-poster">
+    <section id="tour" class="beach-tour-poster">
+        
+ <h1 class="tour-transport-title">Tour & Transport</h1>
+<h2 class="poster-title">Beach Tour</h2>
 
-  <h1 class="poster-title">Beach Tour</h1>
+
+  
 
   <!-- SELONG BELANAK -->
   <div class="tour-block">
@@ -1151,9 +1532,9 @@
   <div class="tour-block">
     <h2>MAWUN</h2>
     <div class="tour-row">
-      <img src="img/mawun1.jpg" onclick="openModal(this.src)">
-      <img src="img/mawun2.jpg" onclick="openModal(this.src)">
-      <img src="img/mawun3.jpg" onclick="openModal(this.src)">
+      <img src="img/Pantai-Mawun-Lombok-1.jpg" onclick="openModal(this.src)">
+      <img src="img/pantai-mawun.jpg" onclick="openModal(this.src)">
+      <img src="img/611f66304e570.jpg.jpeg" onclick="openModal(this.src)">
     </div>
   </div>
 
@@ -1161,9 +1542,9 @@
   <div class="tour-block">
     <h2>LANCING</h2>
     <div class="tour-row">
-      <img src="img/lancing1.jpg" onclick="openModal(this.src)">
-      <img src="img/lancing2.jpg" onclick="openModal(this.src)">
-      <img src="img/lancing3.jpg" onclick="openModal(this.src)">
+      <img src="img/caption.jpg.jpeg" onclick="openModal(this.src)">
+      <img src="img/pantai-lancing-lombok.jpg (1).jpeg" onclick="openModal(this.src)">
+      <img src="img/water-lancing-beach-scaled.jpg.jpeg" onclick="openModal(this.src)">
     </div>
   </div>
 
@@ -1171,9 +1552,9 @@
   <div class="tour-block">
     <h2>TANJUNG AAN</h2>
     <div class="tour-row">
-      <img src="img/tanjung1.jpg" onclick="openModal(this.src)">
-      <img src="img/tanjung2.jpg" onclick="openModal(this.src)">
-      <img src="img/tanjung3.jpg" onclick="openModal(this.src)">
+      <img src="img/aanjamak.jpg" onclick="openModal(this.src)">
+      <img src="img/tanjungaan.jpg" onclick="openModal(this.src)">
+      <img src="img/tanjung-aan-beach-lombok.jpg.jpeg" onclick="openModal(this.src)">
     </div>
   </div>
 
@@ -1188,6 +1569,197 @@
 
 </section>
 
+<!-- city tour -->
+<section id="city-tour" class="city-tour-white">
+
+  <h1 class="city-title">City Tour</h1>
+
+  <div class="city-grid">
+
+    <!-- Epicentrum Mall -->
+    <div class="city-card">
+      <img src="img/epicentrum.jpeg" onclick="openModal(this.src)">
+      <h3>Epicentrum Mall</h3>
+    </div>
+
+    <!-- Mayura Temple -->
+    <div class="city-card">
+      <img src="img/images.jpeg" onclick="openModal(this.src)">
+      <h3>Mayura Temple</h3>
+    </div>
+
+    <!-- Sasak Village -->
+    <div class="city-card">
+      <img src="img/sukerare.jpeg" onclick="openModal(this.src)">
+      <h3>Sasak Village</h3>
+    </div>
+
+    <!-- Sukarare Village -->
+    <div class="city-card">
+      <img src="img/sade.jpeg" onclick="openModal(this.src)">
+      <h3>Sukarare Village</h3>
+    </div>
+
+  </div>
+
+  <!-- Booking -->
+  <div class="city-booking">
+    <p>City Tour • Culture • Shopping • Heritage</p>
+    <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20book%20City%20Tour"
+       class="city-btn">
+      <i class="fab fa-whatsapp"></i> Booking WhatsApp
+    </a>
+  </div>
+
+</section>
+
+<section class="wf-poster">
+    
+
+  <h1 class="wf-title">WATERFALL TOUR</h1>
+
+  <div class="wf-grid">
+
+    <div class="wf-card">
+      <img src="img/stokeeeI.jpeg" onclick="wfOpen(this.src)">
+      <h3>Benang Stokel</h3>
+    </div>
+
+    <div class="wf-card">
+      <img src="img/keambu.jpeg" onclick="wfOpen(this.src)">
+
+      <h3>Benang Kelambu</h3>
+    </div>
+
+    <div class="wf-card">
+      <img src="img/sendanggie.jpeg" onclick="wfOpen(this.src)">
+
+      <h3>Sendang Gile</h3>
+    </div>
+
+    <div class="wf-card">
+      <img src="img/keep.jpeg" onclick="wfOpen(this.src)">
+
+      <h3>Tiu Kelep</h3>
+    </div>
+
+    <div class="wf-card">
+      <img src="img/manis.jpeg" onclick="wfOpen(this.src)">
+
+      <h3>Jeruk Manis</h3>
+    </div>
+
+    <div class="wf-card">
+      <img src="img/waet.jpeg" onclick="wfOpen(this.src)">
+
+      <h3>Sarang Walet</h3>
+    </div>
+
+  </div>
+<!-- WF MODAL ZOOM (ISOLATED) -->
+<div class="wf-modal" id="wfModal">
+  <span class="wf-close" onclick="wfClose()">&times;</span>
+  <img class="wf-modal-img" id="wfModalImg">
+</div>
+
+<!-- WF BOOKING -->
+<div class="wf-booking">
+  <p>Full Day Waterfall Tour • Driver • Fuel • Local Guide</p>
+  <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20book%20Waterfall%20Tour"
+     class="wf-btn">
+    <i class="fab fa-whatsapp"></i> Booking WhatsApp
+  </a>
+</div>
+
+</section>
+
+<section class="shuttle-poster">
+
+  <div class="shuttle-header">
+    SHUTTLE BUS AND PRIVATE CAR
+  </div>
+
+  <div class="shuttle-table-wrap">
+    <table class="shuttle-table">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Destination</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>AIRPORT</td><td>PRIVATE</td></tr>
+        <tr><td>2</td><td>MATARAM</td><td>150K</td></tr>
+        <tr><td>3</td><td>LEMBAR</td><td>150K</td></tr>
+        <tr><td>4</td><td>BANGSAL</td><td>170K</td></tr>
+        <tr><td>5</td><td>GILI TRAWANGAN</td><td>200K</td></tr>
+        <tr><td>6</td><td>GILI AIR</td><td>200K</td></tr>
+        <tr><td>7</td><td>GILI MENO</td><td>200K</td></tr>
+        <tr><td>8</td><td>SENGGIGI</td><td>150K</td></tr>
+        <tr><td>9</td><td>UBUD (Fast Boat)</td><td>500K</td></tr>
+        <tr><td>10</td><td>SANUR (Fast Boat)</td><td>500K</td></tr>
+        <tr><td>11</td><td>SEMINYAK (Fast Boat)</td><td>500K</td></tr>
+        <tr><td>12</td><td>KUTA BALI (Fast Boat)</td><td>500K</td></tr>
+        <tr><td>13</td><td>DENPASAR (Fast Boat)</td><td>500K</td></tr>
+        <tr><td>14</td><td>LEGIAN (Fast Boat)</td><td>500K</td></tr>
+        <tr><td>15</td><td>AMED BALI (Fast Boat)</td><td>650K</td></tr>
+        <tr><td>16</td><td>NUSA PENIDA (Fast Boat)</td><td>600K</td></tr>
+        <tr><td>17</td><td>NUSA LEMBONGAN (Fast Boat)</td><td>750K</td></tr>
+        <tr><td>18</td><td>SERANGAN BALI (Fast Boat)</td><td>900K</td></tr>
+        <tr><td>19</td><td>TETEBATU</td><td>300K</td></tr>
+        <tr><td>20</td><td>SENARU</td><td>500K</td></tr>
+        <tr><td>21</td><td>SUMBAWA</td><td>800K</td></tr>
+        <tr><td>22</td><td>FLORES</td><td>800K</td></tr>
+        <tr><td>23</td><td>GILI GEDE HARBOUR</td><td>500K</td></tr>
+        <tr><td>24</td><td>GILI NGANGU HARBOUR</td><td>250K</td></tr>
+        <tr><td>25</td><td>GILI ASAHAN / KEROS HARBOUR</td><td>350K</td></tr>
+        <tr><td>26</td><td>BANGKO-BANGKO</td><td>500K</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- BUTTON WHATSAPP -->
+  <div class="shuttle-booking">
+    <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20more%20information%20about%20Shuttle%20Bus%20and%20Private%20Car"
+       class="shuttle-btn">
+      <i class="fab fa-whatsapp"></i> More Information
+    </a>
+  </div>
+
+</section>
+
+<!-- Location Section -->
+    <section id="location">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Location</h2>
+                <p>Find us in the heart of Kuta Lombok</p>
+            </div>
+            <div class="location-content" data-aos="fade-up">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1705991.636539106!2d115.1449478059567!3d-9.90859072646167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcda936445cbb81%3A0xb44448e3976cfe22!2sBondan&#39;s%20Kuta%20lombok%20tour%20and%20rental!5e0!3m2!1sms!2sid!4v1769956847594!5m2!1sms!2sid"
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+                <div class="location-info">
+                    <h3><i class="fas fa-map-marker-alt"></i> Visit Our Office</h3>
+                    <p>
+                        Jl. Pantai Kuta, Kuta, Pujut<br>
+                        Lombok Tengah, NTB 83573<br>
+                        Indonesia
+                    </p>
+                    <a href="https://maps.app.goo.gl/43aMNu8FbPNYwnyCA?g_st=ac" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-directions"></i> Open in Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
 
 
     <!-- Floating WhatsApp Button -->
@@ -1308,6 +1880,23 @@
             script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
             document.body.appendChild(script);
         }
+        function wfOpen(src){
+  const modal = document.getElementById("wfModal");
+  const img = document.getElementById("wfModalImg");
+  modal.style.display = "flex";
+  img.src = src;
+}
+
+function wfClose(){
+  document.getElementById("wfModal").style.display = "none";
+}
+
+/* close jika klik background */
+document.getElementById("wfModal")?.addEventListener("click", function(e){
+  if(e.target === this){
+    wfClose();
+  }
+});
     </script>
 </body>
 </html>
