@@ -125,6 +125,38 @@
             border-radius: 3px;
             transition: all 0.3s ease;
         }
+        /* NAVBAR LOGO IMAGE */
+
+.nav-logo{
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-text{
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav-logo{
+    height: 60px;
+  }
+
+  .brand-text{
+    font-size: 16px;
+  }
+}
+
 
         /* Hero Section */
         .hero {
@@ -565,7 +597,7 @@
    ================================ */
 
 .wf-poster{
-  background: linear-gradient(180deg,#0ea5e9,#0284c7,#0369a1);
+  background: linear-gradient(180deg,#64748b,#0284c7,#0369a1);
   padding: 28px 14px 45px;
 }
 
@@ -794,6 +826,183 @@
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 18px 40px rgba(0,0,0,0.45);
 }
+
+/* ================================
+   SNORKLING POSTER (ISOLATED)
+   ================================ */
+
+.snk-poster{
+  background: linear-gradient(180deg,#1e90ff,#00c6ff);
+  padding: 30px 16px 45px;
+  border-radius: 18px;
+  max-width: 1200px;
+  margin: 40px auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+/* TITLE */
+.snk-title{
+  text-align: center;
+  font-size: 38px;
+  font-weight: 900;
+  color: #ffcc00;
+  letter-spacing: 2px;
+  margin-bottom: 28px;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* GRID */
+.snk-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* ITEM */
+.snk-item{
+  text-align: center;
+}
+
+.snk-item img{
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.snk-item img:hover{
+  transform: scale(1.06);
+}
+
+.snk-item p{
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #ffe066;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* CENTER */
+.snk-center{
+  grid-column: span 4;
+  display: flex;
+  justify-content: center;
+}
+
+.snk-center img{
+  max-width: 220px;
+}
+
+/* BOOKING */
+.snk-booking{
+  margin-top: 35px;
+  text-align: center;
+  color: white;
+}
+
+.snk-booking p{
+  margin-bottom: 14px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.snk-btn{
+  background: #22c55e;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+  transition: 0.3s ease;
+}
+
+.snk-btn:hover{
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+}
+
+/* ================================
+   MODAL ZOOM
+   ================================ */
+
+.snk-modal{
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  animation: snkFade 0.3s ease;
+}
+
+.snk-modal img{
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 18px;
+  animation: snkZoom 0.35s ease;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.snk-close{
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 42px;
+  color: white;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+@keyframes snkZoom{
+  from{transform: scale(0.6); opacity:0}
+  to{transform: scale(1); opacity:1}
+}
+
+@keyframes snkFade{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/* ================================
+   MOBILE VERSION
+   ================================ */
+
+@media(max-width: 768px){
+
+  .snk-title{
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+
+  .snk-grid{
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom di HP */
+    gap: 8px;
+  }
+
+  .snk-item p{
+    font-size: 9px;
+    letter-spacing: 0.3px;
+  }
+
+  .snk-center{
+    grid-column: span 4;
+  }
+
+  .snk-center img{
+    max-width: 160px;
+  }
+}
+
 
 
         /* Location Section */
@@ -1229,20 +1438,16 @@
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo">
-                <i class="fas fa-motorcycle"></i> Website BY GaIang
-            </div>
+           <div class="logo">
+    <img src="img/ogo.png" alt="Zidan Transport Logo" class="nav-logo">
+    <span class="brand-text">Zidan Transport</span>
+</div>
+
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#rental" class="nav-link">Rental Scooter</a></li>
                 <li><a href="#tour" class="nav-link">Tour & Transport</a></li>
                 <li><a href="#location" class="nav-link">Lokasi</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li class="lang-toggle">
-                    <button class="lang-btn active" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="id">ID</button>
-                </li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -1309,6 +1514,38 @@
                         </a>
                     </div>
                 </div>
+                <div class="rental-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="rental-images">
+                        <img src="img/CRF150L-Extreme-Black-scaled.jpg" alt="Yamaha NMAX" class="rental-img" onclick="openModal(this.src)">
+                        <img src="img/CRFMERAH.jpg" alt="Yamaha NMAX Detail" class="rental-img" onclick="openModal(this.src)">
+                    </div>
+                    <div class="rental-info">
+                        <h3>CRF</h3>
+                        <div class="specs">
+                            <div class="spec-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>150cc</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-bolt"></i>
+                                <span>Powerful</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-user"></i>
+                                <span>2 Person</span>
+                            </div>
+                        </div>
+                        <div class="price">
+                            Rp 180.000 <span>/ day</span>
+                        </div>
+                        <p class="rental-desc">
+                            Premium scooter with more power and comfort. Ideal for long-distance travel and touring around the island. Spacious storage included.
+                        </p>
+                        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20rent%20CRF" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fab fa-whatsapp"></i> Book Now
+                        </a>
+                    </div>
+                </div>
 
                 <!-- Rental Item 2 -->
                 <div class="rental-item" data-aos="fade-up" data-aos-delay="200">
@@ -1342,6 +1579,7 @@
                             <i class="fab fa-whatsapp"></i> Book Now
                         </a>
                     </div>
+                    
                 </div><div class="rental-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="rental-images">
                         <img src="img/Honda-Vario-125-studio-white.jpg" alt="Yamaha NMAX" class="rental-img" onclick="openModal(this.src)">
@@ -1673,6 +1911,57 @@
 
 </section>
 
+<section class="snk-poster">
+
+  <h1 class="snk-title">SNORKLING TRIP</h1>
+
+  <div class="snk-grid">
+
+    <div class="snk-item"><img src="img/gili-nanggu-island.jpg" onclick="snkOpen(this.src)"><p>GILI NANGGU</p></div>
+    <div class="snk-item"><img src="img/gili-sudak.jpeg" onclick="snkOpen(this.src)"><p>GILI SUDAK</p></div>
+    <div class="snk-item"><img src="img/Gili-Kedis.jpg" onclick="snkOpen(this.src)"><p>GILI KEDIS</p></div>
+    <div class="snk-item"><img src="img/GiliTrawangan.jpg" onclick="snkOpen(this.src)"><p>GILI TRAWANGAN</p></div>
+
+    <div class="snk-item"><img src="img/gilimeno.jpg" onclick="snkOpen(this.src)"><p>GILI MENO</p></div>
+    <div class="snk-item"><img src="img/gili-air.jpg" onclick="snkOpen(this.src)"><p>GILI AIR</p></div>
+    <div class="snk-item"><img src="img/Gili-Gede.jpg" onclick="snkOpen(this.src)"><p>GILI GEDE</p></div>
+    <div class="snk-item"><img src="img/gililayar.jpg" onclick="snkOpen(this.src)"><p>GILI LAYAR</p></div>
+
+    <div class="snk-item"><img src="img/gili-asahan.jpg" onclick="snkOpen(this.src)"><p>GILI ASAHAN</p></div>
+    <div class="snk-item"><img src="img/Pink-Beach-Indonesia-1600x1066.jpeg" onclick="snkOpen(this.src)"><p>PINK BEACH</p></div>
+    <div class="snk-item"><img src="img/giligambir.jpeg" onclick="snkOpen(this.src)"><p>GILI GAMBIR</p></div>
+    <div class="snk-item"><img src="img/Gili Petelu.jpg" onclick="snkOpen(this.src)"><p>GILI PETELU</p></div>
+    <div class="snk-item"><img src="img/gilipasir.jpg" onclick="snkOpen(this.src)"><p>GILI PASIR</p></div>
+
+    <div class="snk-item"><img src="img/fastboat.jpg" onclick="snkOpen(this.src)"><p>FASTBOAT</p></div>
+    <div class="snk-item"><img src="img/rinjanih.jpeg" onclick="snkOpen(this.src)"><p>RINJANI TREKING</p></div>
+    <div class="snk-item"><img src="img/komodo.jpeg" onclick="snkOpen(this.src)"><p>KOMODO TRIP</p></div>
+    <div class="snk-item"><img src="img/RAFTING.jpg" onclick="snkOpen(this.src)"><p>RAFTING TRIP</p></div>
+    <div class="snk-item"><img src="img/tetebatu.jpg" onclick="snkOpen(this.src)"><p>TETE BATU SOFT TREKING</p></div>
+
+
+  </div>
+
+  <!-- BOOKING -->
+  <div class="snk-booking">
+    <p>Full Day Snorkling Trip • Boat • Equipment • Guide</p>
+    <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20book%20Snorkling%20Trip"
+       class="snk-btn">
+      <i class="fab fa-whatsapp"></i> Booking WhatsApp
+    </a>
+  </div>
+
+</section>
+
+<!-- MODAL ZOOM -->
+<div class="snk-modal" id="snkModal">
+  <span class="snk-close" onclick="snkClose()">&times;</span>
+  <img id="snkModalImg">
+</div>
+
+
+
+
 <section class="shuttle-poster">
 
   <div class="shuttle-header">
@@ -1895,6 +2184,23 @@ function wfClose(){
 document.getElementById("wfModal")?.addEventListener("click", function(e){
   if(e.target === this){
     wfClose();
+  }
+});
+function snkOpen(src){
+  const modal = document.getElementById("snkModal");
+  const img = document.getElementById("snkModalImg");
+  modal.style.display = "flex";
+  img.src = src;
+}
+
+function snkClose(){
+  document.getElementById("snkModal").style.display = "none";
+}
+
+/* close if click outside */
+document.getElementById("snkModal").addEventListener("click", function(e){
+  if(e.target === this){
+    snkClose();
   }
 });
     </script>
