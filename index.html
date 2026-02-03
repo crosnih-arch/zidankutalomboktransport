@@ -1002,6 +1002,137 @@
     max-width: 160px;
   }
 }
+/* ================================
+   ADVENTURE CARDS (ISOLATED)
+   ================================ */
+
+.adv-cards{
+  padding: 50px 16px;
+  max-width: 1200px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+/* TITLE */
+.adv-title{
+  font-size: 34px;
+  font-weight: 900;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.adv-sub{
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 40px;
+}
+
+/* GRID */
+.adv-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* desktop */
+  gap: 22px;
+}
+
+/* CARD */
+.adv-card{
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.adv-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+.adv-card img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* BODY */
+.adv-body{
+  padding: 18px;
+  text-align: left;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.adv-body h3{
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.adv-body p{
+  font-size: 14px;
+  line-height: 1.6;
+  color: #475569;
+  flex: 1;
+}
+
+/* BUTTON */
+.adv-btn{
+  margin-top: 14px;
+  background: #22c55e;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.adv-btn:hover{
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+/* ================================
+   MOBILE
+   ================================ */
+
+@media(max-width: 768px){
+
+  .adv-grid{
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom di HP */
+    gap: 14px;
+  }
+
+  .adv-card img{
+    height: 130px;
+  }
+
+  .adv-title{
+    font-size: 24px;
+  }
+
+  .adv-body h3{
+    font-size: 15px;
+  }
+
+  .adv-body p{
+    font-size: 12px;
+  }
+
+  .adv-btn{
+    font-size: 12px;
+    padding: 10px 14px;
+  }
+}
 
 
 
@@ -1933,11 +2064,7 @@
     <div class="snk-item"><img src="img/Gili Petelu.jpg" onclick="snkOpen(this.src)"><p>GILI PETELU</p></div>
     <div class="snk-item"><img src="img/gilipasir.jpg" onclick="snkOpen(this.src)"><p>GILI PASIR</p></div>
 
-    <div class="snk-item"><img src="img/fastboat.jpg" onclick="snkOpen(this.src)"><p>FASTBOAT</p></div>
-    <div class="snk-item"><img src="img/rinjanih.jpeg" onclick="snkOpen(this.src)"><p>RINJANI TREKING</p></div>
-    <div class="snk-item"><img src="img/komodo.jpeg" onclick="snkOpen(this.src)"><p>KOMODO TRIP</p></div>
-    <div class="snk-item"><img src="img/RAFTING.jpg" onclick="snkOpen(this.src)"><p>RAFTING TRIP</p></div>
-    <div class="snk-item"><img src="img/tetebatu.jpg" onclick="snkOpen(this.src)"><p>TETE BATU SOFT TREKING</p></div>
+    
 
 
   </div>
@@ -1960,6 +2087,87 @@
 </div>
 
 
+<section class="adv-cards">
+
+  <h2 class="adv-title">Adventure & Trip Packages</h2>
+  <p class="adv-sub">Explore Lombok & Beyond</p>
+
+  <div class="adv-grid">
+
+    <!-- CARD 1 -->
+    <div class="adv-card">
+      <img src="img/rafting.jpg">
+      <div class="adv-body">
+        <h3>Rafting Trip</h3>
+        <p>Exciting river rafting adventure with guide, safety equipment, and beautiful nature.</p>
+        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20book%20Rafting%20Trip" class="adv-btn">
+          <i class="fab fa-whatsapp"></i> Booking
+        </a>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="adv-card">
+      <img src="img/tetebatu.jpg">
+      <div class="adv-body">
+        <h3>Soft Trekking Tetebatu</h3>
+        <p>Relaxing trekking trip in Tetebatu village with rice fields, waterfalls, and fresh air.</p>
+        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20book%20Soft%20Trekking%20Tetebatu" class="adv-btn">
+          <i class="fab fa-whatsapp"></i> Booking
+        </a>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="adv-card">
+      <img src="img/surfing.jpeg">
+      <div class="adv-body">
+        <h3>Surfing Lesson</h3>
+        <p>Surfing class with professional instructor, board, and safety guidance.</p>
+        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20book%20Surfing%20Lesson" class="adv-btn">
+          <i class="fab fa-whatsapp"></i> Booking
+        </a>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="adv-card">
+      <img src="img/mancing.jpeg">
+      <div class="adv-body">
+        <h3>Fishing Trip</h3>
+        <p>Sea fishing adventure with local fisherman, boat, and fishing equipment.</p>
+        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20book%20Fishing%20Trip" class="adv-btn">
+          <i class="fab fa-whatsapp"></i> Booking
+        </a>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="adv-card">
+      <img src="img/fastboat.jpg">
+      <div class="adv-body">
+        <h3>Fast Boat to Bali</h3>
+        <p>Fast and comfortable fastboat service from Lombok to Bali.</p>
+        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20book%20Fast%20Boat%20to%20Bali" class="adv-btn">
+          <i class="fab fa-whatsapp"></i> Booking
+        </a>
+      </div>
+    </div>
+
+     <div class="adv-card">
+      <img src="img/komodok.jpeg">
+      <div class="adv-body">
+        <h3>Komodo Trip</h3>
+        <p>Eksplore the beauty of Komodo isand and encounter Komodo dragons in Person.</p>
+        <a href="https://wa.me/6281234567890?text=Hi!%20I%20want%20to%20book%20komodo%20Trip" class="adv-btn">
+          <i class="fab fa-whatsapp"></i> Booking
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
 
 
 <section class="shuttle-poster">
